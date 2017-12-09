@@ -37,7 +37,7 @@ public class RecycleViewActivity extends AppCompatActivity {
         recyAdapter = new MyRecyAdapter(getDate(), this);
         recyclerView.setAdapter(recyAdapter);
 
-        recyAdapter.setOnItemClickLitener(new MyRecyAdapter.OnItemClickLitener() {
+        recyAdapter.setOnItemClickListener(new MyRecyAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 Toast.makeText(RecycleViewActivity.this, "sdfasf", Toast.LENGTH_SHORT).show();
