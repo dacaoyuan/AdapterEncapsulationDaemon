@@ -25,4 +25,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="42dp"
         android:text="list 适配器的封装" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:text="滚动布局嵌套listView" />
 </RelativeLayout>

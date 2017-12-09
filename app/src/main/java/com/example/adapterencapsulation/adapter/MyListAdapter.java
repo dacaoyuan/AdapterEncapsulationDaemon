@@ -1,6 +1,7 @@
 package com.example.adapterencapsulation.adapter;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -17,18 +18,23 @@ import java.util.List;
 public class MyListAdapter extends BaseAdapter {
 
 
+    private final LayoutInflater inflater;
     private List<String> stringList;
-    private Context mContext;
 
     public MyListAdapter(List<String> stringList, Context mContext) {
+        inflater = LayoutInflater.from(mContext);
         this.stringList = stringList;
-        this.mContext = mContext;
+    }
+
+    public void setNewsData(List<String> data) {
+        stringList = data;
+        notifyDataSetChanged();
     }
 
 
     @Override
     public int getCount() {
-        return stringList.size();
+        return stringList == null ? 0 : stringList.size();
     }
 
     @Override
@@ -46,7 +52,7 @@ public class MyListAdapter extends BaseAdapter {
         ViewHolder holder;
         if (convertView == null) {
             holder = new ViewHolder();
-            convertView = View.inflate(mContext, R.layout.item_lv, null);
+            convertView = inflater.inflate(R.layout.item_lv, parent, false);
             holder.textView = (TextView) convertView.findViewById(R.id.textView);
             convertView.setTag(holder);
 

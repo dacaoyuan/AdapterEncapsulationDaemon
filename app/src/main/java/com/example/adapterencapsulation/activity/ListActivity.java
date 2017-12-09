@@ -26,7 +26,7 @@ public class ListActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.button1, R.id.button2})
+    @OnClick({R.id.button1, R.id.button2, R.id.button3})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.button1:
@@ -35,6 +35,10 @@ public class ListActivity extends AppCompatActivity {
                 break;
             case R.id.button2:
                 startActivity(new Intent(ListActivity.this, ListViewActivity.class));
+
+                break;
+            case R.id.button3:
+                startActivity(new Intent(ListActivity.this, ScrollViewNestListActivity.class));
 
                 break;
         }

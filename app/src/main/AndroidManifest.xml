@@ -21,7 +21,8 @@
         <activity android:name=".activity.ListActivity" />
         <activity android:name=".activity.PagerActivity" />
         <activity android:name=".activity.BaseViewpagerActivity" />
-        <activity android:name=".activity.PackageViewPagerActivity"></activity>
+        <activity android:name=".activity.PackageViewPagerActivity" />
+        <activity android:name=".activity.ScrollViewNestListActivity"></activity>
     </application>
 
 </manifest>
