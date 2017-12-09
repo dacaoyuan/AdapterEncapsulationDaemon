@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ScrollView;
 
 import com.example.adapterencapsulation.R;
 import com.example.adapterencapsulation.adapter.MyListAdapter;
@@ -23,11 +24,16 @@ import butterknife.ButterKnife;
  * 1:listView 只显示一行的处理办法
  * 方案一：setListViewHeightBasedOnChildren(listView);
  * 方案二：自定义可适应ScrollView的ListView
+ *
+ * 方案一,二，默认显示的首项是ListView，需要手动把ScrollView滚动至最顶端。
+ * scrollView.smoothScrollTo(0, 0);
  */
 public class ScrollViewNestListActivity extends AppCompatActivity {
     private static final String TAG = "ScrollViewNestListActiv";
     @BindView(R.id.listView)
     ListView listView;
+    @BindView(R.id.scrollView)
+    ScrollView scrollView;
     private MyListAdapter listAdapter;
 
     @Override
@@ -49,6 +55,8 @@ public class ScrollViewNestListActivity extends AppCompatActivity {
             }
         }));
         //setListViewHeightBasedOnChildren(listView);
+
+        scrollView.smoothScrollTo(0, 0);
     }
 
     public View getFootView(View.OnClickListener listener) {
