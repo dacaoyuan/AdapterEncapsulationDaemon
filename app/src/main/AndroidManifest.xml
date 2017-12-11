@@ -16,14 +16,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.list.ListViewActivity" />
-        <activity android:name=".activity.BaseListViewActivity" />
+        <activity android:name=".activity.list.BaseListViewActivity" />
         <activity android:name=".activity.recycler.RecycleViewActivity" />
         <activity android:name=".activity.list.ListActivity" />
         <activity android:name=".activity.viewpager.PagerActivity" />
-        <activity android:name=".activity.BaseViewpagerActivity" />
+        <activity android:name=".activity.viewpager.BaseViewpagerActivity" />
         <activity android:name=".activity.viewpager.PackageViewPagerActivity" />
         <activity android:name=".activity.list.ScrollViewNestListActivity" />
-        <activity android:name=".activity.nest.SundryNestSceneActivity"></activity>
+        <activity android:name=".activity.nest.SundryNestSceneActivity" />
+        <activity android:name=".activity.recycler.RecyclerActivity" />
+       <activity android:name=".activity.recycler.RecycleEditTextActivity"></activity>
     </application>
 
 </manifest>

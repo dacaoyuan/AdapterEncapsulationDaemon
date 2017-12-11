@@ -1,4 +1,4 @@
-package com.example.adapterencapsulation.activity;
+package com.example.adapterencapsulation.activity.viewpager;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;

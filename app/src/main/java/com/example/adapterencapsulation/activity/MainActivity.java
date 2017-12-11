@@ -13,6 +13,7 @@ import com.example.adapterencapsulation.R;
 import com.example.adapterencapsulation.activity.nest.SundryNestSceneActivity;
 import com.example.adapterencapsulation.activity.list.ListActivity;
 import com.example.adapterencapsulation.activity.recycler.RecycleViewActivity;
+import com.example.adapterencapsulation.activity.recycler.RecyclerActivity;
 import com.example.adapterencapsulation.activity.viewpager.PagerActivity;
 
 import butterknife.BindView;
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ListActivity.class));
                 break;
             case R.id.button2:
-                startActivity(new Intent(MainActivity.this, RecycleViewActivity.class));
+                startActivity(new Intent(MainActivity.this, RecyclerActivity.class));
                 break;
             case R.id.button3:
                 startActivity(new Intent(MainActivity.this, PagerActivity.class));
