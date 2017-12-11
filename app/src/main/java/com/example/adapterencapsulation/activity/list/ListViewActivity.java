@@ -1,4 +1,4 @@
-package com.example.adapterencapsulation.activity;
+package com.example.adapterencapsulation.activity.list;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

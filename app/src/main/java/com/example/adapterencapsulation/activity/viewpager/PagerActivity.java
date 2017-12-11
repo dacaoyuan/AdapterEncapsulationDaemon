@@ -1,4 +1,4 @@
-package com.example.adapterencapsulation.activity;
+package com.example.adapterencapsulation.activity.viewpager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.adapterencapsulation.R;
+import com.example.adapterencapsulation.activity.BaseViewpagerActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

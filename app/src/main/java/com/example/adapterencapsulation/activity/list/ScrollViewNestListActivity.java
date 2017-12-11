@@ -1,4 +1,4 @@
-package com.example.adapterencapsulation.activity;
+package com.example.adapterencapsulation.activity.list;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +27,21 @@ import butterknife.ButterKnife;
  *
  * 方案一,二，默认显示的首项是ListView，需要手动把ScrollView滚动至最顶端。
  * scrollView.smoothScrollTo(0, 0);
+ *
+ *
+ *
+ * scrollView嵌套RecycleView 与 scrollView嵌套 listView的区别
+ * <p>
+ * 1：嵌套后,listview 默认不开启滑动监听，也有可能 scrollView 直接拦截了，
+ * 目前具体还不太清楚，总之 listview 不会滑动了，只有 scrollView 会滑动。
+ * scrollView默认不能计算listview的高度，从而导致只显示一行的问题。
+ * 我们需要去做方案一，或者 方案二 的处理。
+ *
+ * 2： scrollView嵌套RecycleView，比较高级一些，RecycleView默认做了去适配scrollView大小。
+ * 不需要去做像listview的适配处理。嵌套后，而RecycleView 默认开启滑动监听，从而导致两者滑动
+ * 冲突，出现卡顿现象。我可以手动关闭它，如：  recyclerView.setNestedScrollingEnabled(false);
+ *
+ *
  */
 public class ScrollViewNestListActivity extends AppCompatActivity {
     private static final String TAG = "ScrollViewNestListActiv";

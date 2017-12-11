@@ -1,4 +1,4 @@
-package com.example.adapterencapsulation.activity;
+package com.example.adapterencapsulation.activity.viewpager;
 
 import android.content.Context;
 import android.os.Bundle;

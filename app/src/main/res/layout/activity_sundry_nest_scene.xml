@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_scene1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="场景一(不同方向的)" />
+
+    <Button
+        android:id="@+id/btn_scene2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="场景二(同方向的)" />
+
+    <Button
+        android:id="@+id/btn_scene3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="场景三(场景1,2的混合)" />
+</LinearLayout>

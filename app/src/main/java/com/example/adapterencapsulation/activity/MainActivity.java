@@ -4,13 +4,16 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.adapterencapsulation.R;
+import com.example.adapterencapsulation.activity.nest.SundryNestSceneActivity;
+import com.example.adapterencapsulation.activity.list.ListActivity;
+import com.example.adapterencapsulation.activity.recycler.RecycleViewActivity;
+import com.example.adapterencapsulation.activity.viewpager.PagerActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("MainActivity.onCreate width=" + width + " height=" + height);
     }
 
-    @OnClick({R.id.button, R.id.button2, R.id.button3})
+    @OnClick({R.id.button, R.id.button2, R.id.button3, R.id.button6})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.button:
@@ -55,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.button3:
                 startActivity(new Intent(MainActivity.this, PagerActivity.class));
                 break;
+            case R.id.button6:
+                startActivity(new Intent(MainActivity.this, SundryNestSceneActivity.class));
+                break;
+
+
         }
     }
 }
