@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.adapterencapsulation.R;
 import com.example.adapterencapsulation.adapter.EditTextAdapter;
@@ -29,6 +30,9 @@ public class RecycleEditTextActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     private EditTextAdapter adapter;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +48,8 @@ public class RecycleEditTextActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View view, int position) {
                 Log.i(TAG, "onItemClick: position=" + position);
+                TextView textView = (TextView) view.findViewById(R.id.textView);
+                textView.setText(position + "sss");
             }
 
             @Override

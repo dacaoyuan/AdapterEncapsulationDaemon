@@ -25,11 +25,17 @@ public class SundryNestSceneActivity extends AppCompatActivity {
     @BindView(R.id.btn_scene3)
     Button btnScene3;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sundry_nest_scene);
         ButterKnife.bind(this);
+
+
+
+
     }
 
 

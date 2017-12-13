@@ -29,6 +29,9 @@ public class EditTextAdapter extends RecyclerView.Adapter<EditTextAdapter.ViewHo
     private List<EditBean> stringList;
     private LayoutInflater inflater;
 
+    private List<Integer> mPos = new ArrayList<>();
+
+
     public interface OnItemClickListener {
         void onItemClick(View view, int position);
 
@@ -76,13 +79,20 @@ public class EditTextAdapter extends RecyclerView.Adapter<EditTextAdapter.ViewHo
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         Log.i(TAG, "onBindViewHolder: position=" + position);
-        holder.textView.setText(stringList.get(position).textContent);
+        if (mPos.contains(position)) {
+            holder.textView.setText(position + "sss");
+        } else {
+            holder.textView.setText(stringList.get(position).textContent);
+        }
+
         //holder.editText.setText("");
 
         if (mOnItemClickListener != null) {
             holder.view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    mPos.add(position);
+
                     mOnItemClickListener.onItemClick(v, position);
                 }
             });
@@ -103,9 +113,9 @@ public class EditTextAdapter extends RecyclerView.Adapter<EditTextAdapter.ViewHo
 
     }
 
-
+    // HashMap<Integer, String> contents = new HashMap<>();  //方法一
     private void processEditText(final EditText editText, final int position) {
-        // HashMap<Integer, String> contents = new HashMap<>();  //方法一
+
 
         EditBean editBean = stringList.get(position);//方法二
 
