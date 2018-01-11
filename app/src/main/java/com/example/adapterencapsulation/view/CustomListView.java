@@ -7,6 +7,7 @@ import android.widget.ListView;
 
 /**
  * Created by yuanpk on 2017/12/9.
+ * 方案二的处理：
  */
 //自定义可适应ScrollView的ListView
 public class CustomListView extends ListView {

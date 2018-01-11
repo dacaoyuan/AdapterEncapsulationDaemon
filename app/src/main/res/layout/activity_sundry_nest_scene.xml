@@ -23,8 +23,8 @@
         android:text="场景三(场景1,2的混合)" />
 
 
-    <cn.jzvd.JZVideoPlayerStandard
+    <!--<cn.jzvd.JZVideoPlayerStandard
         android:id="@+id/videoplayer"
         android:layout_width="match_parent"
-        android:layout_height="200dp"/>
+        android:layout_height="200dp"/>-->
 </LinearLayout>

@@ -115,7 +115,7 @@ public class EditTextAdapter extends RecyclerView.Adapter<EditTextAdapter.ViewHo
 
     // HashMap<Integer, String> contents = new HashMap<>();  //方法一
     private void processEditText(final EditText editText, final int position) {
-
+        Log.i(TAG, "processEditText: " + stringList.size() + "  " + position);
 
         EditBean editBean = stringList.get(position);//方法二
 

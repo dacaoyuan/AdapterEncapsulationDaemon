@@ -33,9 +33,6 @@ public class SundryNestSceneActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sundry_nest_scene);
         ButterKnife.bind(this);
 
-
-
-
     }
 
 

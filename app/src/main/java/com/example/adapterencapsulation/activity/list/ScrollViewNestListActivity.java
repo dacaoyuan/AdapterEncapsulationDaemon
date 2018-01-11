@@ -82,6 +82,10 @@ public class ScrollViewNestListActivity extends AppCompatActivity {
         return view;
     }
 
+    /**
+     * 方案一的处理：根据列表个数，计算中总高度，然后去设置listview最终展示的高度。
+     * @param listView
+     */
     public void setListViewHeightBasedOnChildren(ListView listView) {
         // 获取ListView对应的Adapter
         ListAdapter listAdapter = listView.getAdapter();
