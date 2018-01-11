@@ -1,6 +1,7 @@
 package com.example.adapterencapsulation.activity.recycler;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -88,13 +89,15 @@ public class RecycleViewActivity extends AppCompatActivity {
                 //方案一：判断是否都顶部或底部（测试可行）
                 if (!recyclerView.canScrollVertically(-1)) {
                     Log.i(TAG, "onScrolled sliding33: 到顶部啦");
+                    Snackbar.make(recyclerView,"到顶部啦",Snackbar.LENGTH_LONG).show();
                 }else if (!recyclerView.canScrollVertically(1)) {
                     Log.i(TAG, "onScrolled sliding33: 到底部了");
+                    Snackbar.make(recyclerView,"到底部了",Snackbar.LENGTH_LONG).show();
                 }
 
 
                 //方案二：判断是否都顶部或底部（测试可行）
-                visibleItemCount = mLayoutManager.getChildCount();
+              /*  visibleItemCount = mLayoutManager.getChildCount();
                 totalItemCount = mLayoutManager.getItemCount();
                 firstVisibleItem = mLayoutManager.findFirstVisibleItemPosition();
                 if (firstVisibleItem == 0) {
@@ -109,7 +112,7 @@ public class RecycleViewActivity extends AppCompatActivity {
                     if (lastVisibleItemView != null && lastVisibleItemView.getBottom() == mLayoutManager.getHeight()) {
                         Log.d(TAG, "onScroll ##### 滚动到底部 ######");//可以没问题
                     }
-                }
+                }*/
 
 
             }

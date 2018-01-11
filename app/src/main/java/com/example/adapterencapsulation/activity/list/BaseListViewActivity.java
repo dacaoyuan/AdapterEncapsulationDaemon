@@ -93,6 +93,7 @@ public class BaseListViewActivity extends AppCompatActivity {
                     View firstVisibleItemView = lv.getChildAt(0);
                     if (firstVisibleItemView != null && firstVisibleItemView.getTop() == 0) {
                         Log.d(TAG, "onScroll ##### 滚动到顶部 ######");//可以没问题
+                        Snackbar.make(view,"到顶部啦",Snackbar.LENGTH_LONG).show();
                     }
                 }
 
@@ -100,6 +101,7 @@ public class BaseListViewActivity extends AppCompatActivity {
                     View lastVisibleItemView = lv.getChildAt(lv.getChildCount() - 1);
                     if (lastVisibleItemView != null && lastVisibleItemView.getBottom() == lv.getHeight()) {
                         Log.d(TAG, "onScroll ##### 滚动到底部 ######");//可以没问题
+                        Snackbar.make(view,"滚动到底部",Snackbar.LENGTH_LONG).show();
                     }
                 }
 
