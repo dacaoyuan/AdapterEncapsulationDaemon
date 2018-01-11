@@ -26,6 +26,9 @@ public class RecycleViewActivity extends AppCompatActivity {
     RecyclerView recyclerView;
 
     private MyRecyAdapter recyAdapter;
+    private LinearLayoutManager mLayoutManager;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +36,8 @@ public class RecycleViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recycle_view);
         ButterKnife.bind(this);
 
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(mLayoutManager);
         recyAdapter = new MyRecyAdapter(getDate(), this);
         recyclerView.setAdapter(recyAdapter);
 
@@ -49,6 +52,9 @@ public class RecycleViewActivity extends AppCompatActivity {
 
             }
         });
+
+
+
 
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -71,12 +77,48 @@ public class RecycleViewActivity extends AppCompatActivity {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-               Log.i(TAG, "onScrolled: dx=" + dx + " dy=" + dy);
+                Log.i(TAG, "onScrolled: dx=" + dx + " dy=" + dy);
+
+                if (dy > 0) {
+                    Log.i(TAG, "onScrolled sliding: 上滑");
+                } else {
+                    Log.i(TAG, "onScrolled sliding: 下滑");
+                }
+
+                //方案一：判断是否都顶部或底部（测试可行）
+                if (!recyclerView.canScrollVertically(-1)) {
+                    Log.i(TAG, "onScrolled sliding33: 到顶部啦");
+                }else if (!recyclerView.canScrollVertically(1)) {
+                    Log.i(TAG, "onScrolled sliding33: 到底部了");
+                }
+
+
+                //方案二：判断是否都顶部或底部（测试可行）
+                visibleItemCount = mLayoutManager.getChildCount();
+                totalItemCount = mLayoutManager.getItemCount();
+                firstVisibleItem = mLayoutManager.findFirstVisibleItemPosition();
+                if (firstVisibleItem == 0) {
+                    View firstVisibleItemView = mLayoutManager.getChildAt(0);
+                    if (firstVisibleItemView != null && firstVisibleItemView.getTop() == 0) {
+                        Log.d(TAG, "onScroll ##### 滚动到顶部 ######");//可以没问题
+                    }
+                }
+
+                if ((firstVisibleItem + visibleItemCount) == totalItemCount) {
+                    View lastVisibleItemView = mLayoutManager.getChildAt(mLayoutManager.getChildCount() - 1);
+                    if (lastVisibleItemView != null && lastVisibleItemView.getBottom() == mLayoutManager.getHeight()) {
+                        Log.d(TAG, "onScroll ##### 滚动到底部 ######");//可以没问题
+                    }
+                }
+
+
             }
         });
 
     }
-
+    private int firstVisibleItem;
+    private int visibleItemCount;
+    private int totalItemCount;
 
     public List<String> getDate() {
         List<String> strings = new ArrayList<>();

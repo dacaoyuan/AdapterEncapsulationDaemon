@@ -3,6 +3,7 @@ package com.example.adapterencapsulation.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.widget.ListView;
 
 /**
@@ -27,4 +28,16 @@ public class CustomListView extends ListView {
         int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);
         super.onMeasure(widthMeasureSpec, expandSpec);
     }
+
+    //可以根据是否到顶部了，来做一些拦截处理
+    /*@Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+
+        if (getFirstVisiblePosition() == 0 && getChildAt(0).getTop() == 0) {//到头部了
+            getParent().requestDisallowInterceptTouchEvent(false);//放行
+        } else {
+            getParent().requestDisallowInterceptTouchEvent(true);//拦截
+        }
+        return super.onInterceptTouchEvent(ev);
+    }*/
 }
