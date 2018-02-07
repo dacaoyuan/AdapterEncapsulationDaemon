@@ -1,5 +1,6 @@
 package com.example.adapterencapsulation.activity.nest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -40,7 +41,9 @@ public class SundryNestSceneActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_scene1:
-
+                Intent intent=new Intent();
+                intent.setClass(SundryNestSceneActivity.this,DiffDirectionActivity.class);
+                startActivity(intent);
                 break;
             case R.id.btn_scene2:
 

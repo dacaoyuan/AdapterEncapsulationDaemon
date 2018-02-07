@@ -25,7 +25,11 @@
         <activity android:name=".activity.list.ScrollViewNestListActivity" />
         <activity android:name=".activity.nest.SundryNestSceneActivity" />
         <activity android:name=".activity.recycler.RecyclerActivity" />
-       <activity android:name=".activity.recycler.RecycleEditTextActivity"></activity>
+        <activity android:name=".activity.recycler.RecycleEditTextActivity" />
+        <activity android:name=".activity.nest.DiffDirectionActivity" />
+        <activity android:name=".activity.nest.SVNestViewPagerActivity"></activity>
+        <activity android:name=".activity.nest.SVNestViewPager2Activity"></activity>
+        <activity android:name=".activity.nest.SVNestViewPager3Activity"></activity>
     </application>
 
 </manifest>

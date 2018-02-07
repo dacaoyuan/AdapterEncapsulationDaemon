@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
 import com.example.adapterencapsulation.R;
+import com.example.adapterencapsulation.activity.viewpager.switchanimation.DepthPageTransformer;
+import com.example.adapterencapsulation.activity.viewpager.switchanimation.RotateDownPageTransformer;
+import com.example.adapterencapsulation.activity.viewpager.switchanimation.ZoomOutPageTransformer;
 import com.example.adapterencapsulation.adapter.MyPagerAdapter;
 
 import java.util.ArrayList;
@@ -35,6 +38,9 @@ public class BaseViewpagerActivity extends AppCompatActivity {
         pagerAdapter = new MyPagerAdapter(getDate());
         viewPager.setAdapter(pagerAdapter);
 
+        viewPager.setPageTransformer(true, new DepthPageTransformer());
+        //viewPager.setPageTransformer(true, new ZoomOutPageTransformer());
+        // viewPager.setPageTransformer(true, new RotateDownPageTransformer());
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
