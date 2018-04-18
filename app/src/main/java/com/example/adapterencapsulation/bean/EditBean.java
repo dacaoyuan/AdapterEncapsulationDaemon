@@ -9,4 +9,9 @@ public class EditBean {
     public String textContent;
 
 
+    public String name;
+    public String age;
+    public String address;
+
+
 }

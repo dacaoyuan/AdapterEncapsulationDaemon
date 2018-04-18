@@ -16,22 +16,17 @@ import com.example.adapterencapsulation.R;
 import com.example.adapterencapsulation.bean.EditBean;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-
-import static android.R.attr.data;
 
 /**
  * Created by zhyantai on 2017/7/5.
- *
+ * <p>
  * 方法一和方法二测试都没问题。
  */
-public class EditTextAdapter extends RecyclerView.Adapter<EditTextAdapter.ViewHolder> {
+public class MultipleEditTextAdapter extends RecyclerView.Adapter<MultipleEditTextAdapter.ViewHolder> {
     private static final String TAG = "RecycleEditTextActivity";
     private List<EditBean> stringList;
     private LayoutInflater inflater;
-
-    private List<Integer> mPos = new ArrayList<>();
 
 
     public interface OnItemClickListener {
@@ -47,31 +42,34 @@ public class EditTextAdapter extends RecyclerView.Adapter<EditTextAdapter.ViewHo
     }
 
 
-    public EditTextAdapter(List<EditBean> stringList, Context mContext) {
+    public MultipleEditTextAdapter(List<EditBean> stringList, Context mContext) {
         this.stringList = stringList;
         inflater = LayoutInflater.from(mContext);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textView;
         View view;
-        EditText editText;
+        EditText edit_name;
+        EditText edit_age;
+        EditText address;
+
 
         public ViewHolder(View itemView) {
             super(itemView);
             view = itemView;
-            textView = (TextView) itemView.findViewById(R.id.textView);
-            editText = (EditText) itemView.findViewById(R.id.edit_text);
+            edit_name = (EditText) itemView.findViewById(R.id.edit_name);
+            edit_age = (EditText) itemView.findViewById(R.id.edit_age);
+            address = (EditText) itemView.findViewById(R.id.address);
         }
     }
 
 
     @Override
-    public EditTextAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MultipleEditTextAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Log.i(TAG, "onCreateViewHolder: viewType=" + viewType);
 
 
-        View view = inflater.inflate(R.layout.item_recy_edit_text, parent, false);
+        View view = inflater.inflate(R.layout.item_recy_multiple_edit_text, parent, false);
         final ViewHolder holder = new ViewHolder(view);
 
         return holder;
@@ -81,42 +79,16 @@ public class EditTextAdapter extends RecyclerView.Adapter<EditTextAdapter.ViewHo
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         Log.i(TAG, "onBindViewHolder: position=" + position);
-        if (mPos.contains(position)) {
-            holder.textView.setText(position + "sss");
-        } else {
-            holder.textView.setText(stringList.get(position).textContent);
-        }
-
-        //holder.editText.setText("");
-
-        if (mOnItemClickListener != null) {
-            holder.view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    mPos.add(position);
-
-                    mOnItemClickListener.onItemClick(v, position);
-                }
-            });
 
 
-            holder.view.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    mOnItemClickListener.onItemLongClick(v, position);
-                    return false;
-                }
-            });
-        }
-
-
-        processEditText(holder.editText, position);
-
+        processEditText(holder.edit_name, position, 1);//姓名
+        processEditText(holder.edit_age, position, 2);//年龄
+        processEditText(holder.address, position, 3);//地址
 
     }
 
     //HashMap<Integer, String> contents = new HashMap<>();  //方法一
-    private void processEditText(final EditText editText, final int position) {
+    private void processEditText(final EditText editText, final int position, final int type) {
         Log.i(TAG, "processEditText: " + stringList.size() + "  " + position);
 
         editText.setTag(position);
@@ -146,7 +118,20 @@ public class EditTextAdapter extends RecyclerView.Adapter<EditTextAdapter.ViewHo
 
                 //方法二
                 int pos = (int) editText.getTag();
-                stringList.get(pos).editContent = s + "";
+
+
+                switch (type) {
+                    case 1:
+                        stringList.get(pos).name = s + "";
+                        break;
+                    case 2:
+                        stringList.get(pos).age = s + "";
+                        break;
+                    case 3:
+                        stringList.get(pos).address = s + "";
+                        break;
+                }
+
 
             }
         });
@@ -162,10 +147,29 @@ public class EditTextAdapter extends RecyclerView.Adapter<EditTextAdapter.ViewHo
         EditBean editBean = stringList.get(position);//方法二
 
         //方法二
-        if (!TextUtils.isEmpty(editBean.editContent)) {
-            editText.setText(editBean.editContent);
-        } else {
-            editText.setText("");
+        switch (type) {
+            case 1:
+                if (!TextUtils.isEmpty(editBean.name)) {
+                    editText.setText(editBean.name);
+                } else {
+                    editText.setText("");
+                }
+
+                break;
+            case 2:
+                if (!TextUtils.isEmpty(editBean.age)) {
+                    editText.setText(editBean.age);
+                } else {
+                    editText.setText("");
+                }
+                break;
+            case 3:
+                if (!TextUtils.isEmpty(editBean.address)) {
+                    editText.setText(editBean.address);
+                } else {
+                    editText.setText("");
+                }
+                break;
         }
 
 

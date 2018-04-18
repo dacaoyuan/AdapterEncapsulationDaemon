@@ -19,6 +19,12 @@ public class RecyclerActivity extends AppCompatActivity {
     Button button7;
     @BindView(R.id.button8)
     Button button8;
+    @BindView(R.id.button9)
+    Button mButton9;
+    @BindView(R.id.button10)
+    Button button10;
+    @BindView(R.id.button11)
+    Button button11;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +33,7 @@ public class RecyclerActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.button7, R.id.button8})
+    @OnClick({R.id.button7, R.id.button8, R.id.button9, R.id.button10, R.id.button11})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.button7:
@@ -35,6 +41,15 @@ public class RecyclerActivity extends AppCompatActivity {
                 break;
             case R.id.button8:
                 startActivity(new Intent(RecyclerActivity.this, RecycleEditTextActivity.class));
+                break;
+            case R.id.button9:
+                startActivity(new Intent(RecyclerActivity.this, RecycleEditText2Activity.class));
+                break;
+            case R.id.button10:
+                startActivity(new Intent(RecyclerActivity.this, RecycleMultipleEditActivity.class));
+                break;
+            case R.id.button11:
+
                 break;
         }
     }
