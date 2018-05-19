@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.adapterencapsulation">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -33,6 +35,8 @@
         <activity android:name=".activity.recycler.RecycleEditText2Activity">
         </activity>
         <activity android:name=".activity.recycler.RecycleMultipleEditActivity">
+        </activity>
+        <activity android:name=".activity.list.ScrollViewNestWebViewActivity">
         </activity>
     </application>
 
