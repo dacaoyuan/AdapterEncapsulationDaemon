@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.example.adapterencapsulation.R;
 
@@ -28,7 +30,13 @@ public class FragmentTwo extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_fragmentone, null);
+        View view = inflater.inflate(R.layout.fragment_fragmenttwo, null);
+
+        WebView viewById = (WebView) view.findViewById(R.id.webView);
+        viewById.setWebViewClient(new WebViewClient());
+        viewById.loadUrl("https://www.jianshu.com/");
+
+
         return view;
     }
 }

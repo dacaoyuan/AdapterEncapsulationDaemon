@@ -1,29 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/scrollView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/scrollView"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
     <!--方案一-->
     <!--android:fillViewport="true"-->
-<!--现实场景，我们不需要在外层再嵌套ScrollView布局的，没什么实际用处。只为测试，此种嵌套的情况-->
+    <!--现实场景，我们不需要在外层再嵌套ScrollView布局的，没什么实际用处。只为测试，此种嵌套的情况-->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+<!--这种做法不提倡-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="内容展示"/>
+
+
+        </LinearLayout>
+
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabSelectedTextColor="@color/colorPrimaryDark" />
+            app:tabSelectedTextColor="@color/colorPrimaryDark"/>
 
-        <android.support.v4.view.ViewPager
+      <com.example.adapterencapsulation.view.CustomViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
+
+       <!--<android.support.v4.view.ViewPager
+             android:id="@+id/viewPager"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"/>-->
 
     </LinearLayout>
 

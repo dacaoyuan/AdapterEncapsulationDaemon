@@ -65,11 +65,12 @@ public class FragmentOne extends Fragment {
         recyAdapter = new MyRecyAdapter(getData(), getActivity());
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(recyAdapter);
+        recyclerView.setNestedScrollingEnabled(false);
 
         //要通过懒加载，去获取父view的控件
         tabLayout = (TabLayout) getActivity().findViewById(R.id.tab_layout);
 
-        mDetectorCompat = new GestureDetectorCompat(getActivity(), new MyGestureListener());
+        /*mDetectorCompat = new GestureDetectorCompat(getActivity(), new MyGestureListener());
         mDetectorCompat.setIsLongpressEnabled(false);
 
         recyclerView.setOnTouchListener(new View.OnTouchListener() {
@@ -78,7 +79,7 @@ public class FragmentOne extends Fragment {
                 mDetectorCompat.onTouchEvent(event);
                 return false;
             }
-        });
+        });*/
 
     }
 
