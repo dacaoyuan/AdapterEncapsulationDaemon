@@ -38,6 +38,12 @@
         </activity>
         <activity android:name=".activity.list.ScrollViewNestWebViewActivity">
         </activity>
+        <activity android:name=".activity.nest.SameDirectionActivity">
+        </activity>
+        <activity android:name=".activity.nest.VPNestVPActivity">
+        </activity>
+        <activity android:name=".activity.nest.SVnestVPnestVPActivity">
+        </activity>
     </application>
 
 </manifest>

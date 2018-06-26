@@ -27,7 +27,6 @@ public class SundryNestSceneActivity extends AppCompatActivity {
     Button btnScene3;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,14 +38,17 @@ public class SundryNestSceneActivity extends AppCompatActivity {
 
     @OnClick({R.id.btn_scene1, R.id.btn_scene2, R.id.btn_scene3})
     public void onViewClicked(View view) {
+        Intent intent;
         switch (view.getId()) {
             case R.id.btn_scene1:
-                Intent intent=new Intent();
-                intent.setClass(SundryNestSceneActivity.this,DiffDirectionActivity.class);
+                intent = new Intent();
+                intent.setClass(SundryNestSceneActivity.this, DiffDirectionActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btn_scene2:
-
+                intent = new Intent();
+                intent.setClass(SundryNestSceneActivity.this, SameDirectionActivity.class);
+                startActivity(intent);
                 break;
             case R.id.btn_scene3:
 

@@ -63,6 +63,7 @@ public class SVNestViewPager2Activity extends AppCompatActivity {
 
         /**
          * 当我们上面的view如果滑动到一半的时候，切换到下一个Fragment，在切换回来的时候，RecyclerView的第一个item会自动滑动到顶部
+         * 测试发现：下一个fragment如果是ViewPager,没有出现上述的问题。（这个情况，仅做了解一下吧）
          *
          * 下面的一行代码，会有效的解决这个问题。
          */
