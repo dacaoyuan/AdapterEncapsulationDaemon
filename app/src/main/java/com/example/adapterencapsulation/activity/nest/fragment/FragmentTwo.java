@@ -34,7 +34,7 @@ public class FragmentTwo extends Fragment {
 
         WebView viewById = (WebView) view.findViewById(R.id.webView);
         viewById.setWebViewClient(new WebViewClient());
-        viewById.loadUrl("https://www.jianshu.com/");
+        viewById.loadUrl("http://www.wode369.com/jf/front/home");
 
 
         return view;

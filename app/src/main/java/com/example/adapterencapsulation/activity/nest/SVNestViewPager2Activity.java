@@ -9,6 +9,7 @@ import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ScrollView;
 
 import com.example.adapterencapsulation.R;
@@ -47,18 +48,32 @@ public class SVNestViewPager2Activity extends AppCompatActivity {
         }
     };
 
-
+  /*  @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        scrollView.scrollTo(0, 0);
+    }
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scroll_view_nest_view_pager2);
         ButterKnife.bind(this);
+
+
+        /**
+         * 当我们上面的view如果滑动到一半的时候，切换到下一个Fragment，在切换回来的时候，RecyclerView的第一个item会自动滑动到顶部
+         *
+         * 下面的一行代码，会有效的解决这个问题。
+         */
+        scrollView.setDescendantFocusability(ViewGroup.FOCUS_BLOCK_DESCENDANTS); // 会覆盖子类控件而直接获得焦点
+
         pagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
 
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+       /* viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -79,7 +94,7 @@ public class SVNestViewPager2Activity extends AppCompatActivity {
                 }
 
             }
-        });
+        });*/
 
     }
 
