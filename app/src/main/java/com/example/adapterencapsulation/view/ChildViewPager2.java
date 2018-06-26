@@ -2,6 +2,7 @@ package com.example.adapterencapsulation.view;
 
 
 import android.content.Context;
+import android.support.v4.view.VelocityTrackerCompat;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -36,6 +37,8 @@ public class ChildViewPager2 extends ViewPager {
     //private int minSlidingDistance = 160;//最小滑动距离
     private int lastX;
     private int lastY;
+
+    private VelocityTrackerCompat mVelocityTrackerCompat;
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
