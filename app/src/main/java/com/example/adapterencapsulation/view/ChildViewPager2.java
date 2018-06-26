@@ -33,7 +33,7 @@ public class ChildViewPager2 extends ViewPager {
         super(context, attrs);
     }
 
-    private int minSlidingDistance = 160;//最小滑动距离
+    //private int minSlidingDistance = 160;//最小滑动距离
     private int lastX;
     private int lastY;
 
@@ -64,11 +64,19 @@ public class ChildViewPager2 extends ViewPager {
                     Log.i(TAG, "dispatchTouchEvent: 由父亲拦截触摸事件");
                     getParent().requestDisallowInterceptTouchEvent(false);
                 } else {//其他情况，由孩子拦截触摸事件
-                    if (Math.abs(offY) > minSlidingDistance) {
+                    if (Math.abs(offY) > Math.abs(offX)) {
+                        Log.i(TAG, "dispatchTouchEvent: 竖直滑动");
+                        getParent().requestDisallowInterceptTouchEvent(false);//父控件拦截
+                    } else {
+                        Log.i(TAG, "dispatchTouchEvent: 左右滑动");
+                        getParent().requestDisallowInterceptTouchEvent(true);//父控件不拦截
+                    }
+
+                  /*  if (Math.abs(offY) > minSlidingDistance) {
                         getParent().requestDisallowInterceptTouchEvent(false);
                     } else {
                         getParent().requestDisallowInterceptTouchEvent(true);
-                    }
+                    }*/
                 }
 
                 break;
