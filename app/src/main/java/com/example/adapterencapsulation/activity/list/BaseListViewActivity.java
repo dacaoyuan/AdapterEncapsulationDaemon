@@ -45,6 +45,14 @@ public class BaseListViewActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(BaseListViewActivity.this, (String) listAdapter.getItem(position), Toast.LENGTH_SHORT).show();
+
+                //strings.add(0,"1223");
+                //strings.clear();
+                //listAdapter.notifyDataSetChanged();
+
+                //listAdapter.setNewsData(strings);
+
+
             }
         });
 
@@ -125,9 +133,8 @@ public class BaseListViewActivity extends AppCompatActivity {
 
     }
 
-
+    List<String> strings = new ArrayList<>();
     public List<String> getDate() {
-        List<String> strings = new ArrayList<>();
         for (int i = 0; i < 30; i++) {
             strings.add("列表= " + i);
         }

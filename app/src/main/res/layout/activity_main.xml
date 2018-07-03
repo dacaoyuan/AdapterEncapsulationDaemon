@@ -18,6 +18,7 @@
         android:text="适配器封装" />
 
     <Button
+        android:textAllCaps="false"
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,6 +28,7 @@
         android:text="listView 万能ViewHolder(适配器)" />
 
     <Button
+        android:textAllCaps="false"
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,6 +38,7 @@
         android:text="recycleView " />
 
     <Button
+        android:textAllCaps="false"
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,4 +56,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:text="各种控件嵌套导致的滑动冲突场景" />
+
+
+
+
 </RelativeLayout>
