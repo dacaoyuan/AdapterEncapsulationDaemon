@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linear_tab1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="开放时间"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_time"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_tab2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="推荐玩法"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="原生态农产品和原生态旅游品牌，虽然不能在遥远村庄生活，但是却能过上质朴，出尘，绿色，原生态的诗意生活。
+原生态农产品和原生态旅游品牌，虽然不能在遥远村庄生活，但是却能过上质朴，出尘，绿色，原生态的诗意生活。
+原生态农产品和原生态旅游品牌，虽然不能在遥远村庄生活，但是却能过上质朴，出尘，绿色，原生态的诗意生活。
+原生态农产品和原生态旅游品牌，虽然不能在遥远村庄生活，但是却能过上质朴，出尘，绿色，原生态的诗意生活。
+原生态农产品和原生态旅游品牌，虽然不能在遥远村庄生活，但是却能过上质朴，出尘，绿色，原生态的诗意生活。
+原生态农产品和原生态旅游品牌，虽然不能在遥远村庄生活，但是却能过上质朴，出尘，绿色，原生态的诗意生活。
+原生态农产品和原生态旅游品牌，虽然不能在遥远村庄生活，但是却能过上质朴，出尘，绿色，原生态的诗意生活。
+原生态农产品和原生态旅游品牌，虽然不能在遥远村庄生活，但是却能过上质朴，出尘，绿色，原生态的诗意生活。
+原生态农产品和原生态旅游品牌，虽然不能在遥远村庄生活，但是却能过上质朴，出尘，绿色，原生态的诗意生活。"
+            android:textSize="14sp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_tab3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="图文详情"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="原生态农产品和原生态旅游品牌，虽然不能在遥远村庄生活，但是却能过上质朴，出尘，绿色，原生态的诗意生活。"
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_01"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="原生态农产品和原生态旅游品牌，虽然不能在遥远村庄生活，但是却能过上质朴，出尘，绿色，原生态的诗意生活。"
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_02"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="原生态农产品和原生态旅游品牌，虽然不能在遥远村庄生活，但是却能过上质朴，出尘，绿色，原生态的诗意生活。"
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_01"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="原生态农产品和原生态旅游品牌，虽然不能在遥远村庄生活，但是却能过上质朴，出尘，绿色，原生态的诗意生活。"
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_02"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

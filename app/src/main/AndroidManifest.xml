@@ -44,6 +44,8 @@
         </activity>
         <activity android:name=".activity.nest.SVnestVPnestVPActivity">
         </activity>
+        <activity android:name=".activity.scrollview.ScrollSwitchActivity">
+        </activity>
     </application>
 
 </manifest>
