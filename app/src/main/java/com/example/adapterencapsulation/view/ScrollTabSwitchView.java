@@ -10,6 +10,8 @@ import android.widget.LinearLayout;
 import android.support.design.widget.TabLayout;
 
 
+import com.example.adapterencapsulation.R;
+
 import java.util.List;
 
 /**
@@ -44,27 +46,37 @@ public class ScrollTabSwitchView extends LinearLayout {
     private TabLayout tableLayout;
     private CustomScrollView customScrollView;
 
-    public void initLayoutHeight(int mTab1Height, int mTab2Height, int mTab3Height) {
-        this.mTab1Height = mTab1Height;
-        this.mTab2Height = mTab2Height;
-        this.mTab3Height = mTab3Height;
+
+    LinearLayout mLinearTab1;
+    LinearLayout mLinearTab2;
+    LinearLayout mLinearTab3;
+
+    @Override
+    public void onWindowFocusChanged(boolean hasWindowFocus) {
+        super.onWindowFocusChanged(hasWindowFocus);
+        mTab1Height = mLinearTab1.getHeight();
+        mTab2Height = mLinearTab2.getHeight();
+        mTab3Height = mLinearTab3.getHeight();
+        Log.i(TAG, "onWindowFocusChanged: mTab1Height=" + mTab1Height + " mTab2Height=" + mTab2Height);
+
+
     }
-
-    private List<Integer> heightList;
-
-
-    /*public void initLayoutHeight(List<Integer> heightList) {
-        if (heightList == null) {
-            throw new IllegalArgumentException("heightList is null");
-        }
-        this.heightList = heightList;
-    }*/
-
 
     public void initTabSwitchView(Context context, View rootView, List<String> tabName) {
         if (rootView == null || tabName == null) {
             throw new IllegalArgumentException("rootView is null or tabName is null");
         }
+
+        mLinearTab1 = (LinearLayout) rootView.findViewById(R.id.linear_tab1);
+        mLinearTab2 = (LinearLayout) rootView.findViewById(R.id.linear_tab2);
+        mLinearTab3 = (LinearLayout) rootView.findViewById(R.id.linear_tab3);
+       /* mLinearTab1.post(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });*/
+
 
         tableLayout = new TabLayout(context);
         tableLayout.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -190,5 +202,18 @@ public class ScrollTabSwitchView extends LinearLayout {
 
     }
 
+   /*  public void initLayoutHeight(int mTab1Height, int mTab2Height, int mTab3Height) {
+        this.mTab1Height = mTab1Height;
+        this.mTab2Height = mTab2Height;
+        this.mTab3Height = mTab3Height;
+    }
+
+    private List<Integer> heightList;
+   public void initLayoutHeight(List<Integer> heightList) {
+        if (heightList == null) {
+            throw new IllegalArgumentException("heightList is null");
+        }
+        this.heightList = heightList;
+    }*/
 
 }
