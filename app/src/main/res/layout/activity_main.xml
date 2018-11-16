@@ -68,4 +68,16 @@
         android:textAllCaps="false"/>
 
 
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button7"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="下拉图片放大"
+        android:textAllCaps="false"/>
+
+
 </RelativeLayout>

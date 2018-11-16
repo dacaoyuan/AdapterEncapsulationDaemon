@@ -14,6 +14,7 @@ import com.example.adapterencapsulation.activity.nest.SundryNestSceneActivity;
 import com.example.adapterencapsulation.activity.list.ListActivity;
 import com.example.adapterencapsulation.activity.recycler.RecycleViewActivity;
 import com.example.adapterencapsulation.activity.recycler.RecyclerActivity;
+import com.example.adapterencapsulation.activity.scrollview.PullDownZoomActivity;
 import com.example.adapterencapsulation.activity.scrollview.ScrollSwitchActivity;
 import com.example.adapterencapsulation.activity.viewpager.PagerActivity;
 
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("MainActivity.onCreate width=" + width + " height=" + height);
     }
 
-    @OnClick({R.id.button, R.id.button2, R.id.button3, R.id.button6, R.id.button7})
+    @OnClick({R.id.button, R.id.button2, R.id.button3, R.id.button6, R.id.button7,R.id.button8})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.button:
@@ -65,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.button7:
                 startActivity(new Intent(MainActivity.this, ScrollSwitchActivity.class));
+                break;
+            case R.id.button8:
+                startActivity(new Intent(MainActivity.this, PullDownZoomActivity.class));
                 break;
 
 

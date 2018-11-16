@@ -46,6 +46,8 @@
         </activity>
         <activity android:name=".activity.scrollview.ScrollSwitchActivity">
         </activity>
+        <activity android:name=".activity.scrollview.PullDownZoomActivity">
+        </activity>
     </application>
 
 </manifest>
