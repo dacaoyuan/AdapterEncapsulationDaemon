@@ -56,7 +56,8 @@ public class ZoomScrollView extends ScrollView {
      * 滚动监听
      */
     private ScrollViewListener scrollViewListener = null;
-    private Handler handler = new Handler() {
+    private UIHandler handler;
+    /*private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             allScroll -= 55;//这个值越大，回弹的速度越快
@@ -72,33 +73,32 @@ public class ZoomScrollView extends ScrollView {
                 allScroll = -1;
             }
         }
-    };
+    };*/
 
-    private Context mContext;
 
     private static class UIHandler extends Handler {
 
-        private final WeakReference<Context> mWeakReference;
+        private final WeakReference<ZoomScrollView> mWeakReference;
 
-        public UIHandler(Context context) {
-            mWeakReference = new WeakReference<Context>(context);
+        public UIHandler(ZoomScrollView context) {
+            mWeakReference = new WeakReference<ZoomScrollView>(context);
         }
 
         @Override
         public void handleMessage(Message msg) {
-            Context context = mWeakReference.get();
+            ZoomScrollView context = mWeakReference.get();
 
             context.allScroll -= 55;//这个值越大，回弹的速度越快
-            if (allScroll < 0) {
-                allScroll = 0;
+            if (context.allScroll < 0) {
+                context. allScroll = 0;
             }
-            LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) zoomView.getLayoutParams();
-            lp.height = (int) (height + allScroll / 2);
-            zoomView.setLayoutParams(lp);
-            if (allScroll != 0) {
-                handler.sendEmptyMessageDelayed(1, 10);
+            LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) context.zoomView.getLayoutParams();
+            lp.height = (int) (context.height + context.allScroll / 2);
+            context.zoomView.setLayoutParams(lp);
+            if (context.allScroll != 0) {
+                context.handler.sendEmptyMessageDelayed(1, 10);
             } else {
-                allScroll = -1;
+                context. allScroll = -1;
             }
 
 
@@ -134,7 +134,7 @@ public class ZoomScrollView extends ScrollView {
     }
 
     private void init(Context context, AttributeSet attrs) {
-        mContext = context;
+         handler=new UIHandler(this);
 
         TypedArray t = getContext().obtainStyledAttributes(attrs, R.styleable.ObservableScrollView);
         zoomId = t.getResourceId(R.styleable.ObservableScrollView_zoomId, -1);
