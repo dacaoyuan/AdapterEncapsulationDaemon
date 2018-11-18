@@ -57,24 +57,6 @@ public class ZoomScrollView extends ScrollView {
      */
     private ScrollViewListener scrollViewListener = null;
     private UIHandler handler;
-    /*private Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            allScroll -= 55;//这个值越大，回弹的速度越快
-            if (allScroll < 0) {
-                allScroll = 0;
-            }
-            LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) zoomView.getLayoutParams();
-            lp.height = (int) (height + allScroll / 2);
-            zoomView.setLayoutParams(lp);
-            if (allScroll != 0) {
-                handler.sendEmptyMessageDelayed(1, 10);
-            } else {
-                allScroll = -1;
-            }
-        }
-    };*/
-
 
     private static class UIHandler extends Handler {
 
@@ -90,7 +72,7 @@ public class ZoomScrollView extends ScrollView {
 
             context.allScroll -= 55;//这个值越大，回弹的速度越快
             if (context.allScroll < 0) {
-                context. allScroll = 0;
+                context.allScroll = 0;
             }
             LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) context.zoomView.getLayoutParams();
             lp.height = (int) (context.height + context.allScroll / 2);
@@ -98,7 +80,7 @@ public class ZoomScrollView extends ScrollView {
             if (context.allScroll != 0) {
                 context.handler.sendEmptyMessageDelayed(1, 10);
             } else {
-                context. allScroll = -1;
+                context.allScroll = -1;
             }
 
 
@@ -121,12 +103,6 @@ public class ZoomScrollView extends ScrollView {
         init(context, attrs);
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public ZoomScrollView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init(context, attrs);
-    }
-
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
@@ -134,17 +110,14 @@ public class ZoomScrollView extends ScrollView {
     }
 
     private void init(Context context, AttributeSet attrs) {
-         handler=new UIHandler(this);
+        handler = new UIHandler(this);
 
         TypedArray t = getContext().obtainStyledAttributes(attrs, R.styleable.ObservableScrollView);
         zoomId = t.getResourceId(R.styleable.ObservableScrollView_zoomId, -1);
         maxZoom = t.getDimensionPixelOffset(R.styleable.ObservableScrollView_maxZoom, 0);
     }
 
-    public void setScrollViewListener(ScrollViewListener scrollViewListener) {
-        this.scrollViewListener = scrollViewListener;
-    }
-
+    LinearLayout.LayoutParams lp;
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
@@ -160,6 +133,8 @@ public class ZoomScrollView extends ScrollView {
             }
             return super.dispatchTouchEvent(event);
         }
+
+
 
         switch (action) {
             case MotionEvent.ACTION_MOVE: {
@@ -177,7 +152,7 @@ public class ZoomScrollView extends ScrollView {
                         allScroll = maxZoom;
                     }
                     Log.i("allScroll", "allScroll:" + allScroll);
-                    LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) zoomView.getLayoutParams();
+                    lp = (LinearLayout.LayoutParams) zoomView.getLayoutParams();
                     lp.height = (int) (height + allScroll / 2);
                     zoomView.setLayoutParams(lp);
                     if (allScroll == 0) {
@@ -224,6 +199,11 @@ public class ZoomScrollView extends ScrollView {
     }
 
 
+    public void setScrollViewListener(ScrollViewListener scrollViewListener) {
+        this.scrollViewListener = scrollViewListener;
+    }
+
+
     @Override
     protected void onScrollChanged(int x, int y, int oldx, int oldy) {
         super.onScrollChanged(x, y, oldx, oldy);
@@ -233,8 +213,6 @@ public class ZoomScrollView extends ScrollView {
     }
 
     public interface ScrollViewListener {
-
         void onScrollChanged(ZoomScrollView scrollView, int x, int y, int oldx, int oldy);
-
     }
 }
