@@ -38,9 +38,9 @@ public class BaseViewpagerActivity extends AppCompatActivity {
         pagerAdapter = new MyPagerAdapter(getDate());
         viewPager.setAdapter(pagerAdapter);
 
-        viewPager.setPageTransformer(true, new DepthPageTransformer());
+        //viewPager.setPageTransformer(true, new DepthPageTransformer());
         //viewPager.setPageTransformer(true, new ZoomOutPageTransformer());
-        // viewPager.setPageTransformer(true, new RotateDownPageTransformer());
+         //viewPager.setPageTransformer(true, new RotateDownPageTransformer());
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

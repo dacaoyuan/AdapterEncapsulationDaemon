@@ -78,7 +78,7 @@ public class MyRecyAdapter extends RecyclerView.Adapter<MyRecyAdapter.ViewHolder
                 @Override
                 public boolean onLongClick(View v) {
                     mOnItemClickListener.onItemLongClick(v, position);
-                    return false;
+                    return true;
                 }
             });
         }

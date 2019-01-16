@@ -28,6 +28,8 @@ import butterknife.ButterKnife;
  * 已在 竖直ScrollView嵌套，水平滑动viewPager(一) 中做解释
  * <p>
  * 现实场景，我们不需要在外层再嵌套ScrollView布局的，没什么实际用处。只为测试，此种嵌套的情况
+ *
+ * 2018-12-11 发现，这种用法，存在这样的问题：第一个Fragment和第二个Fragment布局高度不一致时，显示还是存在问题。
  */
 public class SVNestViewPager2Activity extends AppCompatActivity {
     public static final String TAG = "SVNestViewPager2Activit";

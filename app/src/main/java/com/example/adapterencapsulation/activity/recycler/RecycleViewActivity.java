@@ -30,7 +30,6 @@ public class RecycleViewActivity extends AppCompatActivity {
     private LinearLayoutManager mLayoutManager;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,16 +44,14 @@ public class RecycleViewActivity extends AppCompatActivity {
         recyAdapter.setOnItemClickListener(new MyRecyAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Toast.makeText(RecycleViewActivity.this, "sdfasf", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RecycleViewActivity.this, "onItemClick", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onItemLongClick(View view, int position) {
-
+                Toast.makeText(RecycleViewActivity.this, "onItemLongClick", Toast.LENGTH_SHORT).show();
             }
         });
-
-
 
 
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -89,10 +86,10 @@ public class RecycleViewActivity extends AppCompatActivity {
                 //方案一：判断是否都顶部或底部（测试可行）
                 if (!recyclerView.canScrollVertically(-1)) {
                     Log.i(TAG, "onScrolled sliding33: 到顶部啦");
-                    Snackbar.make(recyclerView,"到顶部啦",Snackbar.LENGTH_LONG).show();
-                }else if (!recyclerView.canScrollVertically(1)) {
+                    Snackbar.make(recyclerView, "到顶部啦", Snackbar.LENGTH_LONG).show();
+                } else if (!recyclerView.canScrollVertically(1)) {
                     Log.i(TAG, "onScrolled sliding33: 到底部了");
-                    Snackbar.make(recyclerView,"到底部了",Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(recyclerView, "到底部了", Snackbar.LENGTH_LONG).show();
                 }
 
 
@@ -114,11 +111,25 @@ public class RecycleViewActivity extends AppCompatActivity {
                     }
                 }*/
 
+                firstVisibleItem = mLayoutManager.findFirstVisibleItemPosition();
+                if (firstVisibleItem == 3) {
+                    //RecyclerView.ViewHolder viewHolderForLayoutPosition = recyclerView.findViewHolderForLayoutPosition(3);
+                    RecyclerView.ViewHolder viewHolderForAdapterPosition = recyclerView.findViewHolderForAdapterPosition(3);
+               /* int top = viewHolderForAdapterPosition.itemView.getTop();
+                if (top <= 0) {
+                    Log.i(TAG, "onScrolled:  第4个item到顶部啦 top=" + top);
+                }*/
+                    int bottom = viewHolderForAdapterPosition.itemView.getBottom();
+                    if (bottom >= 0) {
+                        Log.i(TAG, "onScrolled:  第4个item到顶部啦 bottom=" + bottom);
+                    }
+                }
 
             }
         });
 
     }
+
     private int firstVisibleItem;
     private int visibleItemCount;
     private int totalItemCount;

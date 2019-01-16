@@ -1,7 +1,9 @@
 package com.example.adapterencapsulation.view;
+
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import android.widget.ScrollView;
  */
 
 public class HeadZoomScrollView extends ScrollView {
+    private static final String TAG = "HeadZoomScrollView";
     private View mZoomView;
     private int mZoomViewWidth;
     private int mZoomViewHeight;
@@ -61,6 +64,8 @@ public class HeadZoomScrollView extends ScrollView {
         }
     }
 
+    //private Long distanceTime;//时间差
+   // private long actionDownTime;
 
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
@@ -68,9 +73,30 @@ public class HeadZoomScrollView extends ScrollView {
             mZoomViewWidth = mZoomView.getMeasuredWidth();
             mZoomViewHeight = mZoomView.getMeasuredHeight();
         }
+        Log.i(TAG, "onTouchEvent: 111");
         switch (ev.getAction()) {
+
+            case MotionEvent.ACTION_CANCEL:
+                Log.i(TAG, "onTouchEvent: ACTION_CANCEL");
+                //actionDownTime = System.currentTimeMillis();
+
+                break;
+            case MotionEvent.ACTION_DOWN:
+                //actionDownTime = System.currentTimeMillis();
+
+                break;
             case MotionEvent.ACTION_UP:
                 //手指离开后恢复图片
+                //distanceTime = System.currentTimeMillis() - actionDownTime;
+                /*Log.i(TAG, "onTouchEvent: distanceTime="+distanceTime);
+                if (distanceTime > 500) {//
+                    Log.i(TAG, "onTouchEvent: 时间差");
+                    isScrolling = false;
+                    replyImage();
+                }else {
+                    Log.i(TAG, "onTouchEvent: 时间差小于500");
+                }*/
+
                 isScrolling = false;
                 replyImage();
                 break;
@@ -93,6 +119,7 @@ public class HeadZoomScrollView extends ScrollView {
         }
         return super.onTouchEvent(ev);
     }
+
     //回弹动画
     private void replyImage() {
         float distance = mZoomView.getMeasuredWidth() - mZoomViewWidth;
@@ -105,6 +132,7 @@ public class HeadZoomScrollView extends ScrollView {
         });
         valueAnimator.start();
     }
+
     public void setZoom(float zoom) {
         if (mZoomViewWidth <= 0 || mZoomViewHeight <= 0) {
             return;
