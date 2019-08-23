@@ -39,7 +39,7 @@ public class ScrollViewNestWebViewActivity extends AppCompatActivity {
         mWebView.loadUrl("file:///android_asset/htmltest.html");
         //mWebView.loadUrl("https://www.baidu.com/");
 
-        mWebView.setOnTouchListener(new View.OnTouchListener() {
+       /* mWebView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
@@ -47,6 +47,6 @@ public class ScrollViewNestWebViewActivity extends AppCompatActivity {
                 Log.i(TAG, "onTouch: ");
                 return false;
             }
-        });
+        });*/
     }
 }
