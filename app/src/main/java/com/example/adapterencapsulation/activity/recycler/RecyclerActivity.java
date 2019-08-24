@@ -33,7 +33,7 @@ public class RecyclerActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.button7, R.id.button8, R.id.button9, R.id.button10, R.id.button11})
+    @OnClick({R.id.button7, R.id.button8, R.id.button9, R.id.button10, R.id.button11, R.id.button12})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.button7:
@@ -49,6 +49,12 @@ public class RecyclerActivity extends AppCompatActivity {
                 startActivity(new Intent(RecyclerActivity.this, RecycleMultipleEditActivity.class));
                 break;
             case R.id.button11:
+
+                break;
+            case R.id.button12:
+
+                startActivity(new Intent(RecyclerActivity.this, RecyclerMultipleActivity.class));
+
 
                 break;
         }

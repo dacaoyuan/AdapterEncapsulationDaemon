@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.adapterencapsulation">
+    package="com.example.adapterencapsulation">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,42 +12,35 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.list.ListViewActivity"/>
-        <activity android:name=".activity.list.BaseListViewActivity"/>
-        <activity android:name=".activity.recycler.RecycleViewActivity"/>
-        <activity android:name=".activity.list.ListActivity"/>
-        <activity android:name=".activity.viewpager.PagerActivity"/>
-        <activity android:name=".activity.viewpager.BaseViewpagerActivity"/>
-        <activity android:name=".activity.viewpager.PackageViewPagerActivity"/>
-        <activity android:name=".activity.list.ScrollViewNestListActivity"/>
-        <activity android:name=".activity.nest.SundryNestSceneActivity"/>
-        <activity android:name=".activity.recycler.RecyclerActivity"/>
-        <activity android:name=".activity.recycler.RecycleEditTextActivity"/>
-        <activity android:name=".activity.nest.DiffDirectionActivity"/>
-        <activity android:name=".activity.nest.SVNestViewPagerActivity"/>
-        <activity android:name=".activity.nest.SVNestViewPager2Activity"/>
-        <activity android:name=".activity.nest.SVNestViewPager3Activity"/>
-        <activity android:name=".activity.recycler.RecycleEditText2Activity">
-        </activity>
-        <activity android:name=".activity.recycler.RecycleMultipleEditActivity">
-        </activity>
-        <activity android:name=".activity.list.ScrollViewNestWebViewActivity">
-        </activity>
-        <activity android:name=".activity.nest.SameDirectionActivity">
-        </activity>
-        <activity android:name=".activity.nest.VPNestVPActivity">
-        </activity>
-        <activity android:name=".activity.nest.SVnestVPnestVPActivity">
-        </activity>
-        <activity android:name=".activity.scrollview.ScrollSwitchActivity">
-        </activity>
-        <activity android:name=".activity.scrollview.PullDownZoomActivity">
-        </activity>
+        <activity android:name=".activity.list.ListViewActivity" />
+        <activity android:name=".activity.list.BaseListViewActivity" />
+        <activity android:name=".activity.recycler.RecycleViewActivity" />
+        <activity android:name=".activity.list.ListActivity" />
+        <activity android:name=".activity.viewpager.PagerActivity" />
+        <activity android:name=".activity.viewpager.BaseViewpagerActivity" />
+        <activity android:name=".activity.viewpager.PackageViewPagerActivity" />
+        <activity android:name=".activity.list.ScrollViewNestListActivity" />
+        <activity android:name=".activity.nest.SundryNestSceneActivity" />
+        <activity android:name=".activity.recycler.RecyclerActivity" />
+        <activity android:name=".activity.recycler.RecycleEditTextActivity" />
+        <activity android:name=".activity.nest.DiffDirectionActivity" />
+        <activity android:name=".activity.nest.SVNestViewPagerActivity" />
+        <activity android:name=".activity.nest.SVNestViewPager2Activity" />
+        <activity android:name=".activity.nest.SVNestViewPager3Activity" />
+        <activity android:name=".activity.recycler.RecycleEditText2Activity"></activity>
+        <activity android:name=".activity.recycler.RecycleMultipleEditActivity"></activity>
+        <activity android:name=".activity.list.ScrollViewNestWebViewActivity"></activity>
+        <activity android:name=".activity.nest.SameDirectionActivity"></activity>
+        <activity android:name=".activity.nest.VPNestVPActivity"></activity>
+        <activity android:name=".activity.nest.SVnestVPnestVPActivity"></activity>
+        <activity android:name=".activity.scrollview.ScrollSwitchActivity"></activity>
+        <activity android:name=".activity.scrollview.PullDownZoomActivity"></activity>
+        <activity android:name=".activity.recycler.RecyclerMultipleActivity"></activity>
     </application>
 
 </manifest>
