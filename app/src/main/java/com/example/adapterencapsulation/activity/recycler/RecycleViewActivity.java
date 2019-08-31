@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.adapterencapsulation.R;
 import com.example.adapterencapsulation.adapter.MyRecyAdapter;
+import com.example.adapterencapsulation.view.SnapLayoutManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * RecycleView 的基本用法
+ * RecycleView 的基本用法+PagerSnapHelper的基本用法
  */
 public class RecycleViewActivity extends AppCompatActivity {
     private static final String TAG = "RecycleViewActivity";
@@ -36,7 +38,8 @@ public class RecycleViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recycle_view);
         ButterKnife.bind(this);
 
-        mLayoutManager = new LinearLayoutManager(this);
+        mLayoutManager = new SnapLayoutManager(this, OrientationHelper.VERTICAL);
+        //mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
         recyAdapter = new MyRecyAdapter(getDate(), this);
         recyclerView.setAdapter(recyAdapter);
