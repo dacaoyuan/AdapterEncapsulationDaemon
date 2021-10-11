@@ -13,6 +13,6 @@ public class PullDownZoomActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pull_down_zoom);
+        setContentView(R.layout.activity_pull_down_zoom_ks);
     }
 }
